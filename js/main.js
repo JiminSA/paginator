@@ -30,4 +30,21 @@ $(document).ready(function () {
   $(window).resize(function () {
     init();
   });
+  
+  _drawIcon($('.downloadIcon canvas'), [[100, 25], [200, 25], [200, 75], [250, 75], [150, 125], [50, 75], [100, 75]], '#00bffb');
+
+  function _drawIcon($canvas, path, color) {
+    var ctx = $canvas.get(0).getContext("2d");
+
+    ctx.beginPath();
+    ctx.moveTo(path[0][0], path[0][1]);
+
+    for (var i = 1; i < path.length; i++) {
+      ctx.lineTo(path[i][0], path[i][1]);
+    }
+
+    ctx.closePath();
+    ctx.fillStyle = color;
+    ctx.fill();
+  }
 });

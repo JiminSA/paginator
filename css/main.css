@@ -37,10 +37,8 @@ h3 {
   position: relative;
   display: inline;
 }
-#logo .icon {
+#logo .icon, .downloadIcon {
   display: inline-block;
-  width: 44px;
-  height: 38px;
   text-align: center;
   background: #212121;
   background: -moz-linear-gradient(top, #909090, #000000);
@@ -54,6 +52,10 @@ h3 {
   border-radius: 5px;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
+}
+#logo .icon {
+  width: 44px;
+  height: 38px;
 }
 #header span {
   color: #666;
@@ -168,6 +170,10 @@ h3 {
 #options ol {
   margin-left: 40px;
 }
+#downloadList {
+  margin-left: 40px;
+  list-style-type: disc;
+}
 code pre {
   color: #008375;  
 }
@@ -198,4 +204,12 @@ span.comment {
 }
 p.note, ol.note {
   color: #00bffb;
+}
+.downloadIcon {
+  width: 15px;
+  height: 15px;
+}
+.downloadIcon canvas {
+  width: inherit;
+  height: inherit;
 }
