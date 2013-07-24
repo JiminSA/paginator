@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <title>paginator demo</title>
+  <script type="text/javascript" src="js/jquery-1.9.0.min.js"></script>
+  <script type="text/javascript" src="js/jquery.paginator.js"></script>
+  <link rel="stylesheet" href="css/paginator.css">
+  <style type="text/css">
+    #paginator1 {
+      position: relative;
+      width: 960px;
+      margin: 100px auto;
+    }
+    #paginator1 .viewport {
+      height: 500px;
+    }
+    #paginator1 .pageIndexBar {
+      position: relative;
+    }
+    pre {
+      background: #eee;
+      border: 1px solid #ccc;
+      padding: 10px;
+      color: #008375;  
+    }
+  </style>
+</head>
+<body>
+  <div id="paginator1">
+    <select class="pageSelector"></select>
+    <div class="pageInputWrapper"><span>Page Number: </span><input type="text" size="2" class="pageInput"></div>
+    <div class="viewport">
+      <div class="pages">
+      <p>Paginator is a customized pagination plugin made with jQuery. It's flexible and easy to use.</p>
+      <p>Please use the <b>dropdown selector</b> in the top left corner, the <b>input box</b> in the top right corner, the <b>page index</b> in the bottom left corner, or <b>swipe</b> on a touch screen device to play with this sample paginator.</p>
+      <img src="images/paginator-blue.jpg">
+      <p>You can easily use css to change the style, set the position and dimension for each element.</p>
+      <p>By default, the paginator viewport is as high as the highest page, and as wide as it can be (depends on parent element's width). However, you can change them with css as you want.</p>
+      <p>Also, you can use other html tag as a page in the paginator.</p>
+      <img src="images/paginator-green.jpg">
+      <table>
+        <thead>
+          <tr>
+            <th>column 1</th>
+            <th>column 2</th>
+            <th>column 3</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>cell 1</td>
+            <td>cell 2</td>
+            <td>cell 3</td>
+          </tr>
+          <tr>
+            <td>cell 4</td>
+            <td>cell 5</td>
+            <td>cell 6</td>
+          </tr>
+          <tr>
+            <td>cell 7</td>
+            <td>cell 8</td>
+            <td>cell 9</td>
+          </tr>
+        </tbody>
+      </table>
+      <ul title="List">
+        <li>item 1</li>
+        <li>item 2</li>
+        <li>item 3</li>
+        <li>item 4</li>
+        <li>item 5</li>
+        <li>item 6</li>
+      </ul>
+      <img src="images/paginator-yellow.jpg" />
+      <p>The options and callback function are both optional, you will find the details below.</p>
+      <p>Just easily give them a <b>class="page"</b></p>
+      <form title="Form" id="formTest" width="100">
+        <fieldset style="border: 1px solid #ccc; padding: 10px;">
+          <legend>HTML form:</legend>
+          <span id="formOut">Hello, what's  your name?</span><br /><br />
+          Your Name: <input id="formIn" type="text"><br>
+        </fieldset>
+      </form>
+      </div><!--pages-->
+    </div><!--viewport-->
+    <div class="pageIndexBar"></div>
+  </div><!--paginator1-->
+  <script type="text/javascript">
+    $(function () {
+      $('#paginator1').paginator({
+        autoPagination: true
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <title>Paginator - a simple pagination jQuery plugin </title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/paginator.css">
+  <script type="text/javascript" src="js/jquery-1.9.0.min.js"></script>
+  <script type="text/javascript" src="js/jquery.paginator.js"></script>
+  <style>
+    .page {
+      margin: 20px;
+      border: 1px solid #fff;
+      padding: 30px;
+    }
+  </style>
+</head>
+<body>
+  <div id="header">
+    <div class="container">
+      <h1 id="logo">Paginator<div class="icon">JQ</div></h1>
+      <span>a simple pagination jQuery plugin</span>
+      <div id="menu">
+        <ul>
+          <li class="selected">Overview</li>
+          <li>Usage</li>
+          <li>Options</li>
+          <li>APIs</li>
+          <li>Download</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div id="main">
+    <div id="overview" class="webPage">
+      <h2>Overview</h2>
+      <p>Paginator is a customized pagination plugin made with jQuery. It's flexible and easy to use.</p>
+      <div id="demo">
+        <h3>Live Demo</h3>
+        <div id="paginator1">
+          <select class="pageSelector"></select>
+          <div class="pageInputWrapper"><span>Page Number: </span><input type="text" size="2" class="pageInput"></div>
+          <div class="viewport">
+            <div class="pages">
+              <div class="page" title="Description">
+                <p>This is a live demo.</p>
+                <p>Please use the <b>dropdown selector</b> in the top left corner, the <b>input box</b> in the top right corner, the <b>page index</b> in the bottom left corner, or <b>swipe</b> on a touch screen device to play with this sample paginator.</p>
+                <p></p>
+              </div>
+              <div class="page" title="Flexible">
+                <p>You can easily use css to change the style, set the position and dimension for each element.</p>
+                <p>By default, the paginator viewport is as high as the highest page, and as wide as it can be (depends on parent element's width). However, you can change them with css as you want.</p>
+                <p>Also, you can use other html tag as a page in the paginator.</p>
+              </div>
+              <img class="page" title="Image" src="images/paginator-blue.jpg" height="300"/>
+              <form class="page" title="Form" id="formTest">
+                <fieldset style="border: 1px solid #ccc; padding: 10px;">
+                  <legend>HTML form:</legend>
+                  <span id="formOut">Hello, what's  your name?</span><br /><br />
+                  Your Name: <input id="formIn" type="text"><br>
+                </fieldset>
+              </form>
+              <ul class="page" title="List">
+                <li>item 1</li>
+                <li>item 2</li>
+                <li>item 3</li>
+                <li>item 4</li>
+                <li>item 5</li>
+                <li>item 6</li>
+              </ul>
+              <table class="page" title="Table">
+                <thead>
+                  <tr>
+                    <th>column 1</th>
+                    <th>column 2</th>
+                    <th>column 3</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>cell 1</td>
+                    <td>cell 2</td>
+                    <td>cell 3</td>
+                  </tr>
+                  <tr>
+                    <td>cell 4</td>
+                    <td>cell 5</td>
+                    <td>cell 6</td>
+                  </tr>
+                  <tr>
+                    <td>cell 7</td>
+                    <td>cell 8</td>
+                    <td>cell 9</td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="page" title="APIs">
+                <p>You can also use the APIs to create your own UI to control the paginator. For example, here are two buttons made with <b>selectPage</b>,  one will bring you back to the first page, the other one will bring you to the next page.</p>
+                <button id="demoButton1" type="button">Go to page1</button>
+                <button id="demoButton2" type="button">Go to page8</button>
+              </div>
+              <div class="page" title="Event Listener">
+                <p>This is page8. So now you can see the button color has been changed to orange, the <b>.on('selectPage')</b> listener did it.</p>
+                <p>Go to page9 to get the original color back.</p>
+              </div>
+              <div class="page" title="page9">
+                <p>This is page9. Isn't the original color back?</p>
+                <p>If you don't know what am I talking about, go to page8.</p>
+              </div>
+            </div><!--pages-->
+          </div><!--viewport-->
+          <div class="pageIndexBar"></div>
+        </div><!--paginator1-->
+      </div><!--demo-->
+      <div id="feature">
+        <h3>Feature</h3>
+        <ul>
+          <li>Free</li>
+          <li>Support most html contents.</li>
+          <li>Support swiping on touch screen device.</li>
+          <li>Support modern browser: IE9+, Firefox, Opera, Chrome, and Safari.</li>
+          <li>Support auto pagination</li>
+        </ul>
+      </div>
+    </div><!--overview-->
+    <div id="usage" class="webPage">
+      <h2>Usage</h2>
+      <h3>Basic Usage</h3>
+      <p>The HTML code looks like this (<a href="demo.html">demo</a>) :</p>
+      <p>1. Make sure to include <b>jQuery</b>, <b>jquery.paginator.js</b>, and <b>paginator.css</b> in your HTML file: </p>
+      <code>
+        <pre>
+&lt;<span class="tag">head</span>&gt;
+  &lt;<span class="tag">script</span> <span class="attr">type</span>=<span class="value">"text/javascript"</span> <span class="attr">src</span>=<span class="value">"js/jquery-1.9.0.min.js"</span>&gt;&lt;/<span class="tag">script</span>&gt;
+  &lt;<span class="tag">script</span> <span class="attr">type</span>=<span class="value">"text/javascript"</span> <span class="attr">src</span>=<span class="value">"js/jquery.paginator.js"</span>&gt;&lt;/<span class="tag">script</span>&gt;
+  &lt;<span class="tag">link</span> <span class="attr">rel</span>=<span class="value">"stylesheet"</span> <span class="attr">href</span>=<span class="value">"css/paginator.css"</span>&gt;
+&lt;/<span class="tag">head</span>&gt;
+        </pre>
+      </code>
+      <br>
+      <p>2. Create your paginator in the &lt;body&gt; tag. Your page content should be placed inside a <b>&lt;div class="page"&gt;</b> tag, and use a <b>&lt;div class="pages"&gt;</b> tag to wrap all the pages and put it inside a <b>&lt;div class="viewport"&gt;</b> tag.</p>
+      <p>There are four basic ways to control the paginator: <b>1) drop down selector</b>, <b>2) input box</b>, <b>3) index bar</b>, and <b>4) swiping</b> on a touch screen device. Swiping is a default, the other three can be implemented as the example below, and you can use <b>css</b> to define their position and style.</p>
+      <p>The example includes all of the three methods, but they are actually optional.</p>
+      <code>
+        <pre>
+&lt;<span class="tag">div</span> <span class="attr">id</span>=<span class="value">"paginator1"</span>&gt;
+  &lt;<span class="tag">select</span> <span class="attr">class</span>=<span class="value">"pageSelector"</span>&gt;&lt;/<span class="tag">select</span>&gt;<span class="comment">&lt;--This is the dropdown selector--&gt;</span>
+  &lt;<span class="tag">div</span> <span class="attr">class</span>=<span class="value">"pageInputWrapper"</span>&gt;<span class="text">Page Number: </span>&lt;<span class="tag">input</span> <span class="attr">type</span>=<span class="value">"text"</span> <span class="attr">size</span>=<span class="value">"2"</span> <span class="attr">class</span>=<span class="value">"pageInput"</span>&gt;&lt;/<span class="tag">div</span>&gt;<span class="comment">&lt;--This is the input box--&gt;</span>
+  &lt;<span class="tag">div</span> <span class="attr">class</span>=<span class="value">"viewport"</span>&gt;
+    &lt;<span class="tag">div</span> <span class="attr">class</span>=<span class="value">"pages"</span>&gt;
+      &lt;<span class="tag">div</span> <span class="attr">class</span>=<span class="value">"page"</span> <span class="attr">title</span>=<span class="value">"title1"</span>&gt;<span class="text">page content</span>&lt;/<span class="tag">div</span>&gt;
+      &lt;<span class="tag">div</span> <span class="attr">class</span>=<span class="value">"page"</span> <span class="attr">title</span>=<span class="value">"title2"</span>&gt;<span class="text">page content</span>&lt;/<span class="tag">div</span>&gt;
+      &lt;<span class="tag">div</span> <span class="attr">class</span>=<span class="value">"page"</span> <span class="attr">title</span>=<span class="value">"title3"</span>&gt;<span class="text">page content</span>&lt;/<span class="tag">div</span>&gt;
+    &lt;/<span class="tag">div</span>&gt;
+  &lt;/<span class="tag">div</span>&gt;
+  &lt;<span class="tag">div</span> <span class="attr">class</span>=<span class="value">"pageIndexBar"</span>&gt;&lt;/<span class="tag">div</span>&gt;<span class="comment">&lt;--This is the index bar--&gt;</span>
+&lt;/<span class="tag">div</span>&gt;
+        </pre>
+      </code>
+      <br>
+      <p>3. Apply it in JavaScript.</p>
+      <code>
+        <pre>
+&lt;<span class="tag">script</span> <span class="attr">type</span>=<span class="value">"text/javascript"</span>&gt;
+  <span class="punctuation">$</span><span class="parenthesis">(</span>function <span class="parenthesis">()</span> {
+    <span class="punctuation">$</span><span class="parenthesis">(</span><span class="value">'#paginator1'</span><span class="parenthesis">)</span><span class="function">.paginator</span><span class="parenthesis">()</span><span class="punctuation">;</span>
+  }<span class="parenthesis">)</span><span class="punctuation">;</span>
+&lt;/<span class="tag">script</span>&gt;
+        </pre>
+      </code>
+      <br>
+      <p>The syntax is:</p>
+      <p>&nbsp;&nbsp;<b>.paginator([options], [callback])</b>.</p> 
+      <p>The options and callback function are both optional, you will find the details below.</p>
+      <br />
+      <h3>Advance Usage</h3>
+      <p>You can use not only <b>&lt;div&gt;</b> tag as each page, but also some other tags, like: <b>&lt;img /&gt;</b>, <b>&lt;ul&gt;</b>, <b>&lt;table&gt;</b>, ... (please see the live demo above)</p>
+      <p>Just easily give them a <b>class="page"</b>:</p>
+      <code>
+        <pre>
+&lt;<span class="tag">img</span> <span class="attr">class</span>=<span class="value">"page"</span> <span class="attr">title</span>=<span class="value">"title1"</span> /&gt;
+&lt;<span class="tag">ul</span> <span class="attr">class</span>=<span class="value">"page"</span> <span class="attr">title</span>=<span class="value">"title2"</span>&gt;<span class="text">list content</span>&lt;/<span class="tag">ul</span>&gt;
+&lt;<span class="tag">form</span> <span class="attr">class</span>=<span class="value">"page"</span> <span class="attr">title</span>=<span class="value">"title3"</span>&gt;<span class="text">form content</span>&lt;/<span class="tag">form</span>&gt;
+&lt;<span class="tag">table</span> <span class="attr">class</span>=<span class="value">"page"</span> <span class="attr">title</span>=<span class="value">"title3"</span>&gt;<span class="text">table content</span>&lt;/<span class="tag">table</span>&gt;
+        </pre>
+      </code>
+      <br />
+      <p class="note">Note: This plugin doesn't solve the iframe dimesion problems on iOS, so iframe is not suggested</p>
+      <p class="note">Note: The swipe method is not gonna work for a <b>&lt;video&gt;</b> tag which swallows all touch events on an iPad unless you remove the controls attribute; on iPhone or iPod Touch, the <b>&lt;video&gt;</b> tag is just a link to open the QuickTime app to play the video, so, it won't work even you remove the controls attribute.</p>
+      <br />
+      <p>The paginator allows you to use css to change style of its child elements (<a href="demo-css.html">demo</a>).</p>
+      <p class="note">Note: The only exception is the <b>class="pages"</b> element, which is just a wrapper for all the page elements, it should not have left and right border, padding, or margin.</p>
+      <br />
+      <p>Pagination for a table is also possible. The concept is using <b>&lt;tbody&gt;</b> tags to be pages (<a href="demo-table.html">demo</a>) :</p>
+      <code>
+        <pre>
+&lt;<span class="tag">table</span> <span class="attr">class</span>=<span class="value">"pages"</span>&gt;
+  &lt;<span class="tag">tbody</span> <span class="attr">class</span>=<span class="value">"page"</span> <span class="attr">title</span>=<span class="value">"title1"</span>&gt;
+    &lt;<span class="tag">tr</span>&gt;
+      &lt;<span class="tag">td</span>&gt;<span class="text">content</span>&lt;<span class="tag">/td</span>&gt;
+      &lt;<span class="tag">td</span>&gt;<span class="text">content</span>&lt;<span class="tag">/td</span>&gt;
+      &lt;<span class="tag">td</span>&gt;<span class="text">content</span>&lt;<span class="tag">/td</span>&gt;
+    &lt;<span class="tag">/tr</span>&gt;
+  &lt;/<span class="tag">tbody</span>&gt;
+  &lt;<span class="tag">tbody</span> <span class="attr">class</span>=<span class="value">"page"</span> <span class="attr">title</span>=<span class="value">"title2"</span>&gt;
+    &lt;<span class="tag">tr</span>&gt;
+      &lt;<span class="tag">td</span>&gt;<span class="text">content</span>&lt;<span class="tag">/td</span>&gt;
+      &lt;<span class="tag">td</span>&gt;<span class="text">content</span>&lt;<span class="tag">/td</span>&gt;
+      &lt;<span class="tag">td</span>&gt;<span class="text">content</span>&lt;<span class="tag">/td</span>&gt;
+    &lt;<span class="tag">/tr</span>&gt;
+  &lt;/<span class="tag">tbody</span>&gt;
+  &lt;<span class="tag">tbody</span> <span class="attr">class</span>=<span class="value">"page"</span> <span class="attr">title</span>=<span class="value">"title3"</span>&gt;
+    &lt;<span class="tag">tr</span>&gt;
+      &lt;<span class="tag">td</span>&gt;<span class="text">content</span>&lt;<span class="tag">/td</span>&gt;
+      &lt;<span class="tag">td</span>&gt;<span class="text">content</span>&lt;<span class="tag">/td</span>&gt;
+      &lt;<span class="tag">td</span>&gt;<span class="text">content</span>&lt;<span class="tag">/td</span>&gt;
+    &lt;<span class="tag">/tr</span>&gt;
+  &lt;/<span class="tag">tbody</span>&gt;
+&lt;/<span class="tag">table</span>&gt;
+        </pre>
+      </code>
+    </div>
+    <div id="options" class="webPage">
+      <h2>Options</h2>
+      <p>The first argement of <b>.paginator()</b> is an option object. You can specify options when applying paginator:</p>
+      <code>
+        <pre>
+<span class="punctuation">$</span><span class="parenthesis">(</span><span class="value">'#paginator1'</span><span class="parenthesis">)</span><span class="function">.paginator</span><span class="parenthesis">(</span>{<span class="variable">autoPagination:</span> <span class="value">true</span>}<span class="parenthesis">)</span><span class="punctuation">;</span> <span class="comment">// turn on auto pagination</span>
+        </pre>
+      </code>
+      <br />
+      <h3>Available options</h3>
+      <table>
+        <tr>
+          <th width="150">Option</th>
+          <th width="100">Type</th>
+          <th width="100">Default</th>
+          <th>Description</th>
+        </tr>
+        <tr>
+          <td><b>autoPagination</b></td>
+          <td>boolean</td>
+          <td>false</td>
+          <td>
+            <p>If set to true, the page content elements shoulde be placed inside the <b>&lt;div class="pages"&gt;</b> tag, and each page will be automatically generated. (<a href="demo-auto.html">demo</a>)</p>
+            <p>Ex:</p>
+            <p>
+              &lt;div class="pages"&gt;<br>
+              &nbsp;&nbsp;&lt;p&gt;paragraph1&lt;/p&gt;<br>
+              &nbsp;&nbsp;&lt;p&gt;paragraph2&lt;/p&gt;<br>
+              &nbsp;&nbsp;&lt;img src="pic1.jpg" /&gt;<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;.<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;.<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;.<br>
+              &lt;/div&gt;
+            </p>
+            <p class="note">Note:</p>
+            <p class="note">The page will be generated according to the <b>viewport height</b> and the <b>height of each element in the &lt;div class="pages"&gt;</b> tag, so make sure:
+              <ol class="note">
+                <li>The <b>viewport height</b> is set before applying the paginator.</li>
+                <li><b>Each child element has a real height</b>. For example:  if it has floated elements inside and itself is not floated or overflow: auto, and there is no elements has clear attribute, it doesn't really wrap the floated elements. So, you need to give it a height before applying the paginator.</li>
+              </ol>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td><b>displayNumber</b></td>
+          <td>integer</td>
+          <td>9</td>
+          <td><br /><p>Set the max page number shoud be visible in the index bar.</p><br /></td>
+        </tr>
+        <tr>
+          <td><b>swipe</b></td>
+          <td>boolean</td>
+          <td>true</td>
+          <td><br /><p>Allow users to swipe on the touch screen devices.</p><br /></td>
+        </tr>
+      </table>
+    </div>
+    <div id="apis" class="webPage">
+      <h2>APIs</h2>
+      <p>You can use the APIs to control the paginator you just created. Using the same element to call these APIs.</p>
+      <code>
+        <pre>
+<span class="punctuation">$</span><span class="parenthesis">(</span><span class="value">'#paginator1'</span><span class="parenthesis">)</span><span class="function">.paginator</span><span class="parenthesis">(</span><span class="value">'selectPage'</span><span class="parenthesis"><span class="punctuation">,</span> <span class="number">1</span>)</span><span class="punctuation">; </span><span class="comment">// turn to page1</span>
+        </pre>
+      </code>
+      <br />
+      <h3>Control the Paginator</h3>
+      <table>
+        <tr>
+          <th width="300">Syntax</th>
+          <th>Description</th>
+        </tr>
+        <tr>
+          <td><b>.paginator(<span class="value">'initPaginator'</span>)</b></td>
+          <td>
+            <p>Initialize the paginator.</p>
+            <p>This method doens't accept arguments.</p>
+            <p>Code example:</p>
+            <p>Initialize the paginator.</p>
+            <p>$(<span class="value">'#paginator1'</span>).paginator(<span class="value">'initPaginator'</span>);</p>
+          </td>
+        </tr>
+        <tr>
+          <td><b>.paginator(<span class="value">'selectPage'</span>, pageId)</b></td>
+          <td>
+            <p>Turn to a page.</p>
+            <p>Code example:</p>
+            <p>Turn to page 1.</p>
+            <p>$(<span class="value">'#paginator1'</span>).paginator(<span class="value">'selectPage'</span>, 1);</p>
+          </td>
+        </tr>
+        <tr>
+          <td><b>.paginator(<span class="value">'insertPage'</span>, pageId, {<br>&nbsp;&nbsp;content: htmlString,<br>&nbsp;&nbsp;title: textString<br>})</b></td>
+          <td>
+            <p>Insert a new page into the paginator and initialize it. The third argument is the page object including content and title, the second argument is the page id of the page you are gonna insert.</p>
+            <p>The index is an option. If index is not defined, the new page will be automatically inserted after the last page.</p>
+            <p>If the title is not defined, the page title will be page number.</p>
+            <p>Code example:</p>
+            <p>Insert a new page before page 1.</p>
+            <p>$(<span class="value">'#paginator1'</span>).paginator(<span class="value">'insertPage'</span>, 1, {<br />&nbsp;&nbsp;content: 'This is a new page!', <br />&nbsp;&nbsp;title: 'new' <br />});</p>
+          </td>
+        </tr>
+        <tr>
+          <td><b>.paginator(<span class="value">'updatePage'</span>, pageId, {<br />&nbsp;&nbsp;content: htmlString,<br />&nbsp;&nbsp;title: textString<br>})</b></td>
+          <td>
+            <p>Update a page's content and title and initialize the paginator. The third argument is the page object including content and title, and the second argument is the page id of the page you are gonna update.</p>
+            <p>Code example:</p>
+            <p>Update page 1.</p>
+            <p>$(<span class="value">'#paginator1'</span>).paginator(<span class="value">'updatePage'</span>, 1, {<br />&nbsp;&nbsp;content: 'Page 1 has been updated!', <br />&nbsp;&nbsp;title: 'update'<br />});</p>
+          </td>
+        </tr>
+        <tr>
+          <td><b>.paginator(<span class="value">'removePage'</span>, pageId)</b></td>
+          <td>
+            <p>Remove a page and initialize the paginator.</p>
+            <p>Code example:</p>
+            <p>Remove page 1.</p>
+            <p>$(<span class="value">'#paginator1'</span>).paginator(<span class="value">'removePage'</span>, 1);</p>
+          </td>
+        </tr>
+      </table>
+      <br />
+      <h3>Event Listener</h3>
+      <table>
+        <tr>
+          <th width="300">Syntax</th>
+          <th>Description</th>
+        </tr>
+        <tr>
+          <td><b>.on(<span class="value">'selectPage'</span>, handler)</b></td>
+          <td>
+            <p>Called when a page is selected. Like the reguler event, the scope is bound to the selector itself.</p>
+            <p>Code example:</p>
+            <p>
+              $(<span class="value">'#paginator1 .page:eq(0)'</span>).on(<span class="value">'selectPage'</span>, function () {<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;//do something<br>
+              });
+            </p>
+            <p>and this will be fired on page1</p>
+            <p class="note">Note: For a page element only.</p>
+          </td>
+        </tr>
+      </table>
+      <br />
+      <h3>Callback</h3>
+      <p>The callback function will be fired right after the paginator is created. Ex: </p>
+      <code>
+        <pre>
+<span class="punctuation">$</span><span class="parenthesis">(</span><span class="value">'#paginator1'</span><span class="parenthesis">)</span><span class="function">.paginator</span><span class="parenthesis">(</span>function <span class="parenthesis">()</span> {
+&nbsp;&nbsp;<span class="function">console.log</span><span class="parenthesis">(</span>this<span class="parenthesis">)</span><span class="punctuation">;</span>
+}<span class="parenthesis">)</span><span class="punctuation">; </span><span class="comment">// show the object in console </span>
+        </pre>
+      </code>
+    </div>
+    <div id="download" class="webPage">
+      <h2>Download</h2>
+      Coming soon!
+    </div>
+  </div><!--main-->
+  <script type="text/javascript">
+    $(function () {
+      var paginator1 = $('#paginator1');
+
+      paginator1.paginator({
+        displayNumber: 7
+      });
+
+      var firstIcon = $('.firstIcon', paginator1).get(0).getContext('2d'),
+          prevIcon = $('.prevIcon', paginator1).get(0).getContext('2d'),
+          nextIcon = $('.nextIcon', paginator1).get(0).getContext('2d'),
+          lastIcon = $('.lastIcon', paginator1).get(0).getContext('2d');
+
+      var drawIcon = function (selector, path, color) {
+        selector.beginPath();
+        selector.moveTo(path[0][0], path[0][1]);
+        for (var i = 1; i < path.length; i++) {
+          selector.lineTo(path[i][0], path[i][1]);
+        }
+        selector.closePath();
+        selector.fillStyle = color;
+        selector.fill();
+      };
+
+      var draw = function (color) {
+        $('.pageIndexButton, .pageSelector, .pageInputWrapper', paginator1).css({'color': color});
+        drawIcon(firstIcon, [[190, 25], [90, 70], [190, 115]], color);
+        drawIcon(firstIcon, [[90, 25], [90, 115], [70, 115], [70, 25]], color);
+        drawIcon(prevIcon, [[190, 25], [90, 70], [190, 115]], color);
+        drawIcon(nextIcon, [[110, 25], [210, 70], [110, 115]], color);
+        drawIcon(lastIcon, [[110, 25], [210, 70], [110, 115]], color);
+        drawIcon(lastIcon, [[210, 25], [210, 115], [230, 115], [230, 25]], color);
+      };
+
+      $('#demoButton1').click(function () {
+        $('#paginator1').paginator('selectPage', 1);
+      });
+      $('#demoButton2').click(function () {
+        $('#paginator1').paginator('selectPage', 8);
+      });
+      $('.page:eq(7)', paginator1).on('selectPage', function () {
+        draw('#ff3600');
+      });
+      $('.page:eq(8)', paginator1).on('selectPage', function () {
+        draw('#00bffb');
+      });
+
+      $('#formIn').on('change', function () {
+        $('#formOut').html('Hello, ' + $('#formIn').val());
+      });
+      $('#formTest').submit(function (e) {
+        e.preventDefault();
+      });
+    });
+  </script>
+  <script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>

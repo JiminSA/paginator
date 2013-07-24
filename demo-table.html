@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <title>paginator demo</title>
+  <script type="text/javascript" src="js/jquery-1.9.0.min.js"></script>
+  <script type="text/javascript" src="js/jquery.paginator.js"></script>
+  <link rel="stylesheet" href="css/paginator.css">
+  <style>
+    td {
+      width: 200px;
+      border: 1px solid grey;
+    } 
+  </style>
+</head>
+<body>
+  <div id="paginator1">
+    <select class="pageSelector"></select>
+    <div class="pageInputWrapper">Page Number: <input type="text" size="2" class="pageInput"></div>
+    <div class="viewport">
+        <table class="pages">
+          <tbody class="page" title="tbody1">
+            <tr>
+              <td>This</td>
+              <td>is</td>
+              <td>page</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>This</td>
+              <td>is</td>
+              <td>page</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>This</td>
+              <td>is</td>
+              <td>page</td>
+              <td>1</td>
+            </tr>
+          </tbody>
+          <tbody class="page" title="tbody2">
+            <tr>
+              <td>This</td>
+              <td>is</td>
+              <td>page</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td>This</td>
+              <td>is</td>
+              <td>page</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td>This</td>
+              <td>is</td>
+              <td>page</td>
+              <td>2</td>
+            </tr>
+          </tbody>
+          <tbody class="page" title="tbody3">
+            <tr>
+              <td>This</td>
+              <td>is</td>
+              <td>page</td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td>This</td>
+              <td>is</td>
+              <td>page</td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td>This</td>
+              <td>is</td>
+              <td>page</td>
+              <td>3</td>
+            </tr>
+          </tbody>
+          <tbody class="page" title="tbody4">
+            <tr>
+              <td>This</td>
+              <td>is</td>
+              <td>page</td>
+              <td>4</td>
+            </tr>
+            <tr>
+              <td>This</td>
+              <td>is</td>
+              <td>page</td>
+              <td>4</td>
+            </tr>
+            <tr>
+              <td>This</td>
+              <td>is</td>
+              <td>page</td>
+              <td>4</td>
+            </tr>
+          </tbody>
+          <tbody class="page" title="tbody5">
+            <tr>
+              <td>This</td>
+              <td>is</td>
+              <td>page</td>
+              <td>5</td>
+            </tr>
+            <tr>
+              <td>This</td>
+              <td>is</td>
+              <td>page</td>
+              <td>5</td>
+            </tr>
+            <tr>
+              <td>This</td>
+              <td>is</td>
+              <td>page</td>
+              <td>5</td>
+            </tr>
+          </tbody>
+        </table>
+    </div><!--viewport-->
+    <div class="pageIndexBar"></div>
+  </div><!--paginator1-->
+  <script type="text/javascript">
+    $(function () {
+      $('#paginator1').paginator({displayNumber: 5});
+    });
+  </script>
+</bodY>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <title>paginator demo</title>
+  <script type="text/javascript" src="js/jquery-1.9.0.min.js"></script>
+  <script type="text/javascript" src="js/jquery.paginator.js"></script>
+  <link rel="stylesheet" href="css/paginator.css">
+  <style>
+    td {
+      width: 200px;
+      border: 1px solid grey;
+    } 
+  </style>
+</head>
+<body>
+  <div id="paginator1">
+    <select class="pageSelector"></select>
+    <div class="pageInputWrapper">Page Number: <input type="text" size="2" class="pageInput"></div>
+    <div class="viewport">
+      <div class="pages">
+        <div class="page" style="border: 1px solid #000; margin: 20px; padding: 20px;">
+          <p>border: 1px solid #000;</p>
+          <p>margin: 20px;</p>
+          <p>padding: 20px;</p> 
+        </div>
+        <div class="page" style="border: 5px solid #f00; margin: 0; padding: 0;">
+          <p>border: 5px solid #f00;</p>
+          <p>margin: 0;</p>
+          <p>padding: 0;</p> 
+        </div>
+        <div class="page" style="border: 1px solid #0f0; margin: 30px; padding: 0;">
+          <p>border: 1px solid #0f0;</p>
+          <p>margin: 30px;</p>
+          <p>padding: 0;</p> 
+        </div>
+        <div class="page" style="background-color: #00f; color: #fff; margin: 0; padding: 30px;">
+          <p>background-color: #00f;</p>
+          <p>color: #fff;</p>
+          <p>margin: 0;</p>
+          <p>padding: 30px;</p> 
+        </div>
+      </div>
+    </div><!--viewport-->
+    <div class="pageIndexBar"></div>
+  </div><!--paginator1-->
+  <script type="text/javascript">
+    $(function () {
+      $('#paginator1').paginator({displayNumber: 5});
+    });
+  </script>
+</bodY>
+</html>
