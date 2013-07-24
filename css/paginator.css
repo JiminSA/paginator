@@ -1,0 +1,126 @@
+.paginator {
+  font-size: 16px;
+  position: relative;
+}
+
+.paginator .viewport {
+  position: relative;
+  overflow: hidden;
+}
+
+.paginator .pages {
+  position: relative;
+  left: 0px;
+/*
+  overflow: auto;
+  zoom: 1;
+*/
+}
+
+.paginator .page {
+  position: relative;
+  float: left;
+}
+
+.paginator .pageInputWrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.paginator .pageIndexBar {
+  overflow: auto;
+  zoom: 1;
+}
+
+.paginator .pageNumberViewport, .paginator .pageNumberWrapper {
+  position: relative;
+  float: left;
+}
+
+.paginator .pageNumberViewport {
+  overflow: hidden;
+}
+
+.paginator .pageIndexButton, .paginator select.pageSelector, .paginator .pageInputWrapper{
+  background: #212121;
+  background: -moz-linear-gradient(top, #909090, #000000);
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#909090), to(#000000));
+  background: -webkit-linear-gradient(top, #909090, #000000);
+  background: -ms-linear-gradient(top, #909090, #000000);
+  background: -o-linear-gradient(top, #909090, #000000);
+  background: linear-gradient(top, #909090, #000000);
+  -webkit-appearance: none;
+  color: #00bffb;
+  border-style: solid;
+  border-color: #3a3a3a;
+}
+
+.paginator select.pageSelector {
+  font-size: 16px;
+}
+
+.paginator select.pageSelector option {
+  background: #212121;
+}
+
+.paginator .pageInput {
+  border-width: 0;
+}
+
+.paginator .pageIndexButton {
+  float: left;
+  width: 25px;
+  height: 19px;
+  text-align: center;
+  padding: 3px 0;
+  border-top-width: 2px;
+  border-left-width: 0;
+  border-bottom-width: 2px;
+  border-right-width: 2px;
+}
+
+.paginator .firstButton {
+  border-left-width: 2px;
+}
+
+.paginator .pageIndexButton:hover, .paginator select.pageSelector {
+  cursor: pointer;
+}
+
+.paginator .pageIndexButton.firstButton, .paginator .pageInputWrapper {
+  border-top-left-radius:5px;
+  -webkit-border-top-left-radius:5px;
+  -moz-border-top-left-radius:5px;
+  border-bottom-left-radius:5px;
+  -webkit-border-bottom-left-radius:5px;
+  -moz-border-bottom-left-radius:5px;
+}
+
+.paginator .pageIndexButton.lastButton, .paginator .pageInputWrapper {
+  border-top-right-radius:5px;
+  -webkit-border-top-right-radius:5px;
+  -moz-border-top-right-radius:5px;
+  border-bottom-right-radius:5px;
+  -webkit-border-bottom-right-radius:5px;
+  -moz-border-bottom-right-radius:5px;
+}
+
+.paginator .pageIndexBar canvas {
+  width: inherit;
+  height: inherit;
+}
+
+.paginator .pageIndexButton.selected, .paginator .pageIndexButton:active {
+  background: #515151;
+  background: -moz-linear-gradient(top, #000000, #909090);
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#000000), to(#909090));
+  background: -webkit-linear-gradient(top, #000000, #909090);
+  background: -ms-linear-gradient(top, #000000, #909090);
+  background: -o-linear-gradient(top, #000000, #909090);
+  background: linear-gradient(top, #000000, #909090);
+}
+
+.paginator .pageIndexButton.selected:hover {
+  cursor: default;
+}
