@@ -1,6 +1,6 @@
 # PaginatorJQ
 
-a simple pagination jQuery plugin 
+A simple pagination jQuery plugin 
 
 ## Documentation
 
